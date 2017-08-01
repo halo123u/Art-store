@@ -1,0 +1,27 @@
+{
+  "name": "blick_store",
+  "version": "1.0.0",
+  "description": "The purpose of this project is to improve dick blicks current art website. We want to improve the user experience by redesigning their website.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halo123u/Art-store.git"
+  },
+  "keywords": [
+    "express",
+    "nodejs",
+    "postgres"
+  ],
+  "author": "Oswaldo Almazo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/halo123u/Art-store/issues"
+  },
+  "homepage": "https://github.com/halo123u/Art-store#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
