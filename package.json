@@ -4,9 +4,8 @@
   "description": "The purpose of this project is to improve dick blicks current art website. We want to improve the user experience by redesigning their website.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "test": "mocha --timeout 10000"
+    "test": "mocha --timeout 10000",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +23,9 @@
   },
   "homepage": "https://github.com/halo123u/Art-store#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "ejs": "^2.5.7",
+    "express": "^4.15.3",
+    "pg-promise": "^6.3.6"
   },
   "devDependencies": {
     "chai": "^4.1.0",
