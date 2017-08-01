@@ -6,5 +6,7 @@ const port = process.env.PORT || 3000;
 app.listen(port);
 
 app.get('/',(req,res)=>{
-    res.send('hello');
+    res.status(200).send('hello');
 });
+
+module.exports = app;
