@@ -8,6 +8,8 @@ CREATE TABLE IF NOT EXISTS items(
     sub_Category TEXT,
     price DECIMAL
 );
+
+-- ADD EMAIL FOR USER
 CREATE TABLE IF NOT EXISTS users(
     user_id SERIAL PRIMARY KEY,
     first_name TEXT,

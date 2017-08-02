@@ -23,9 +23,14 @@
   },
   "homepage": "https://github.com/halo123u/Art-store#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.3",
     "ejs": "^2.5.7",
     "express": "^4.15.3",
+    "express-session": "^1.15.4",
     "isomorphic-fetch": "^2.2.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "pg-promise": "^6.3.6"
   },
   "devDependencies": {
