@@ -5,13 +5,14 @@ CREATE TABLE IF NOT EXISTS items(
     name TEXT,
     description TEXT,
     product_Category TEXT,
-    sub_Category TEXT
+    sub_Category TEXT,
+    price DECIMAL
 );
 CREATE TABLE IF NOT EXISTS users(
     user_id SERIAL PRIMARY KEY,
     first_name TEXT,
     last_name TEXT,
-    usename TEXT,
+    username TEXT,
     password TEXT,
     phoneNumber INTEGER
 );  

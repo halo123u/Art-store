@@ -33,7 +33,7 @@ VALUES(
 (
     'http://cdn.dick-blick.com/items/239/03/23903-1014-3ww-l.jpg',
     'Elmer''s Rubber Cement',
-    'ERROR:  VALUES lists must all be the same length'
+    'ERROR:  VALUES lists must all be the same length',
     'Supply & Tools',
     'Glue'
 )    
