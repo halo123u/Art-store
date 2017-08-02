@@ -25,6 +25,7 @@
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.15.3",
+    "isomorphic-fetch": "^2.2.1",
     "pg-promise": "^6.3.6"
   },
   "devDependencies": {
