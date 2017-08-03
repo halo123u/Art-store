@@ -28,9 +28,18 @@ const ItemController = {
     },
     id: (req,res)=>{
         Item.findById(req.params.id).then(item=>{
-            console.log(item);
-            console.log(res.locals.comments);
-            res.status(200).json(item);
+            if(res.locals.comments == undefined){
+                res.locals.comments = [{
+                    title: "no comments found",
+                    starRating: 0,
+                    username: ""
+                }];
+            }
+                        console.log(res.locals.comments);
+            res.render('item/single-item',{
+                data: item,
+                comments: res.locals.comments
+            });
         });
     },
     comments : (req,res)=>{

@@ -64,8 +64,12 @@ h3{
     <% for( let item of data){ %>
     <div class="items">
         <div class="item">
-            <img src="<%=item.picture_url%>" alt="">
+            <a href="/search/id/<%= item.item_id%>">
+                <img src="<%=item.picture_url%>" alt="">
+            </a>
+            <a href="/search/id/<%= item.item_id%>">
             <h2> <%= item.name  %> </h2>
+            </a>
         <h3>price:$9.99</h3>
         </div>
         </div>

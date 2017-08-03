@@ -1,0 +1,143 @@
+<% include ../partials/head %>
+<style>
+    .body{
+        margin-top: 100px;
+    }
+
+    .item {
+        width:80%;
+        margin:0 auto;
+    }
+
+    img {
+        margin-left:20%;
+    }
+
+    .info{
+        float:right;
+        margin-right:20%;
+    }
+
+    .desc{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .desc h1{
+        background:black;
+        color:white;
+        padding:5px;
+        margin-top:60px;
+    }
+
+    .desc p{
+        padding:20px;
+    }
+
+    .reviews{
+        width:80%;
+        margin:0 auto;
+    }
+
+       .reviews h1{
+        background:black;
+        color:white;
+        padding:5px;
+        margin-top:60px;
+    }
+
+    .addComment [type="textbox"]{
+        width:100%;
+        height:300px;
+    }
+
+    .addComment [type="text"] {
+        width:40%;
+        height:50px;
+        float:left;
+    }
+
+    .star_rating{
+        float:left;
+        margin-left:90px;
+    }
+    .btn{
+        width: 50%;
+    }
+    img{
+        height:200px;
+        width: 200px;
+    }
+
+</style>
+    <div class="body">
+        <div class="item-Container">
+            <div class="item">
+                <img src="<%= data.picture_url %>" alt="<%=data.name%>">
+                <div class="info">
+                <h1><%=data.name%></h1>
+                <div class="stars">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+                <h2 class="price">$9.99</h2>
+                <form action="#">
+                    <input class="btn" type="submit" value="Add to Cart">
+                </form>
+                </div>
+            </div>       
+            <div class="desc">
+                <h1>Description</h1>  
+                <p><%=data.description %></p>
+            </div>
+            <div class="reviews">
+            <h1>Reviews</h1>
+                <% if(comments.title == "no comments found") { %>
+                <div class="comment">
+                    <h1>Be the first to write a review!</h1>
+                </div>
+                <% } else { %>
+                <% for(comment of comments){ %>
+                <div class="comment">
+                    <h1><%=comment.title %></h1>
+                    <h2><%=comment.username %></h2>
+                    <div class="starts">
+                    <%for(let i=0; i<comment.star_rating;i++){  %>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    <%}%>
+                    </div>
+                    <p class="review-text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Culpa a perspiciatis nemo autem consectetur quaerat 
+                        quas consequatur, ex totam dicta, suscipit provident
+                        blanditiis asperiores laudantium doloremque 
+                        repudiandae debitis excepturi iste!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Molestiae excepturi, voluptatem. Sapiente dolor dolore quam saepe 
+                        soluta sunt atque, fuga numquam necessitatibus repellat temporibus 
+                        hic distinctio, sint magni blanditiis non.
+                    <p>
+                </div>
+                    <%}%>
+                <% } %>
+                <div class="addComment">
+                    <form action="#">
+                    <textarea type="textbox" placeholder="Write a Review" name="content"></textarea>
+                    <input type="text" placeholder="Title" name="title">
+                    <div class="ratingStar">
+                        <input type="radio" name="star_rating" value="1" checked>1 <i class="fa fa-star" aria-hidden="true"></i>
+                        <input type="radio" name="star_rating" value="2" > 2 <i class="fa fa-star" aria-hidden="true"></i>
+                        <input type="radio" name="star_rating" value="3" > 3 <i class="fa fa-star" aria-hidden="true"></i>                              
+                        <input type="radio" name="star_rating" value="4" > 4 <i class="fa fa-star" aria-hidden="true"></i>
+                        <input type="radio" name="star_rating" value="5" > 5 <i class="fa fa-star" aria-hidden="true"></i>            
+                    </div>
+                    </form>
+                </div>
+                
+            </div>    
+    </div>
+
+    
+<% include ../partials/footer %>

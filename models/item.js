@@ -18,8 +18,7 @@ const Item = {
          `,[subCategory]);
     },
     findComments : (id)=>{
-        return db.query(`SELECT * FROM comments
-        WHERE it_id = $1`,[id]);
+        return db.query(`select comments.title,comments.star_rating,users.username from comments JOIN users ON comments.us_id = users.user_id WHERE us_id =$1;`,[id]);
     }
 }
 
