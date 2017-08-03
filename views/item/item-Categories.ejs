@@ -1,0 +1,75 @@
+<% include ../partials/head %>
+<style>
+body{
+    display: flex;
+    justify-content:center;
+}
+h1{
+    font-size:30px;
+    background:black;
+    padding:5px;
+    color:white;
+    width:80vw;
+    margin:0 auto;
+    margin-top:70px;
+}
+
+.item-container{
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    flex-direction:row;
+    width:90vw;
+    flex-wrap:wrap;
+}
+
+.items {
+    padding:10px;
+    height:450px;
+    width:450px;
+    display:flex;
+    justify-content:center;
+    margin-top:20px;
+    margin-bottom:-50px;
+}
+
+.items img{
+    width:280px;
+    height:280px;
+    margin:0 auto;
+    border:3px solid black;
+    padding:50px;
+    display:flex;
+    flex: 1;
+}
+
+h2{
+    font-size:24px;
+    font-family:avenir;
+    text-align:center;
+}
+
+h3{
+    text-align:center;
+    margin-top:-5px;
+    font-size:16px;
+}
+
+
+
+</style>
+<div class="container-fluid body-container">
+    <h1><%= title %></h1>
+    <div class="item-container" >
+    <% for( let item of data){ %>
+    <div class="items">
+        <div class="item">
+            <img src="<%=item.picture_url%>" alt="">
+            <h2> <%= item.name  %> </h2>
+        <h3>price:$9.99</h3>
+        </div>
+        </div>
+    <%}%>
+    </div>
+<div>
+<% include ../partials/footer %>

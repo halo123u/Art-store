@@ -11,15 +11,19 @@ const ItemController = {
         })
     },
     category: (req,res)=>{
-        Item.findByCategory(req.params.category).then(data=>{
-            console.log(data);
-            res.status(200).json(data);
+        Item.findByCategory(req.params.category).then(items=>{
+            
+            res.render('item/item-Categories',{
+                title: req.params.category,
+                data: items });
         });
     },
     subCategory: (req,res)=>{
-        Item.findBySubCategory(req.params.subCategory).then(data=>{
-            console.log(data);
-            res.status(200).json(data);
+        Item.findBySubCategory(req.params.subCategory).then(items=>{
+            res.render('item/item-Subcategory',{
+            title: req.params.subCategory,
+            data: items
+            });
         });
     },
     id: (req,res)=>{
