@@ -1,0 +1,111 @@
+<% include ../partials/head %>
+<style>
+    body{
+        width:90vw;
+        margin: 0 auto;
+        margin-top:70px;
+    }
+    .btn{
+        width:50%;
+    }
+    .btn2{
+        width:50%;
+        margin-left: 25%;
+    }
+</style>
+<div class="body" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+            <h1>left side</h1>
+                <div class="col-md-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <input type="submit" class="btn" value="login">
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <h4>
+                        Please enter your e-mail address and your password to login.
+                    </h4>
+                    <h4 style="margin-top:50px">
+                        Passwords are case sensitive.
+                    </h4>
+                </div>
+                <div class="col-md-12" style="margin-top:50px;">
+                    <h4>If you are not already a registered Blick customer, you can sign up here.
+</h4>
+                    <h4>Becoming a registered Blick customer is a great way to save time, track your orders, and view your order history — no matter whether your orders were placed online, by phone, by fax, or by mail. After registering, you can also create and share wish lists, and sign up to receive special offers and discounts by email. Register today!</h4>
+                </div>
+                </div>
+            <div class="col-md-6">
+                <h1>right side</h1>
+                <form action="#">
+                <div class="col-md-6">
+                    <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                            <label for="exampleInputEmail2">Verify Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="Address">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                            <label for="pass">Password</label>
+                            <input type="password" class="form-control" id="pass" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                            <label for="vPass">Verify Password</label>
+                            <input type="password" class="form-control" id="vPass" placeholder="Verify Password">
+                    </div>
+                    <div class="form-group">
+                            <label for="passwordH">Hint</label>
+                            <input type="text" class="form-control" id="passwordH" placeholder="Hint">
+                    </div>
+                    <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city" placeholder="City">
+                    </div>
+                    <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" class="form-control" id="state" placeholder="State">
+                    </div>
+                    <div class="form-group">
+                            <label for="zip">Zipcode</label>
+                            <input type="number" class="form-control" id="zip" placeholder="Zipcode">
+                    </div>
+                </div>
+
+                <input type="submit" value="Submit" class="btn btn2">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer%>
