@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const logger  =require('morgan');
+// const logger  =require('morgan');
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 app.listen(port,()=>{
     console.log(`server running on port ${port}`);
 });
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
