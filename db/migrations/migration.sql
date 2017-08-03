@@ -1,4 +1,4 @@
-\c art_store
+-- \c art_store
 CREATE TABLE IF NOT EXISTS items(
     item_id SERIAL PRIMARY KEY,
     picture_url TEXT,
