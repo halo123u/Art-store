@@ -47,6 +47,17 @@ const ItemController = {
             console.log(comments);
             res.json(comments);
         })
+    },
+    addCart: (req,res)=>{
+        Item.findById(req.params.id).then(item=>{
+            console.log(item);
+            res.render('item/cart',{
+                data: item
+            }).catch(err=>{
+                console.log(err);
+                res.status(500).json(err);
+            })
+        })
     }
 }
 

@@ -7,7 +7,7 @@ module.exports = () => {
   });
 
  passport.deserializeUser((username, done) => {
-    User.findByUserName(username)
+    User.findByUsername(username)
       .then(user => {
         process.env.CURRENT_USER=user.id;
         done(null, user);

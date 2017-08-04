@@ -24,6 +24,7 @@
   "homepage": "https://github.com/halo123u/Art-store#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
     "ejs": "^2.5.7",

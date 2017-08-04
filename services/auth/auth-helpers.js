@@ -6,12 +6,13 @@ function comparePass(userPassword, databasePassword) {
 }
 
 function loginRedirect(req, res, next) {
-  if (req.user) return res.redirect('/user');
+  if (req.user) return res.redirect('/');
   return next();
 }
 
 function loginRequired(req, res, next) {
-  //if (req.user === undefined) return res.redirect('/auth/login');
+  console.log('hello0');
+  if (req.user === undefined) return res.redirect('/auth/login');
   res.redirect('/auth/login');
   return next();
 }

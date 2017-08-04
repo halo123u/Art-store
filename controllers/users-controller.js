@@ -3,29 +3,34 @@ const User = require('../models/user.js');
 
 const usersController = {};
 
-usersController.index = function(req, res) {
-  console.log('userController');
-  User.findUserTodoList(req.user.id)
-    .then(function(todolist){
-      res.render('todolist/todolist-index', {
-        currentPage: 'index',
-        message: 'ok',
-        data: todolist,
-      });
-    }).catch(function(err){
-      console.log(err);
-      res.status(500).json({err: err});
-    });
+usersController.index = (req,res)=>{
+    User.findByUsername(req.body.username).then(data=>{
+      console.log(data);
+      res.json(data);
+    }).catch(err=>{
+      console.log(err)
+      res.status(500).json(err);
+    })
 }
+  usersController.account = (req,res)=>{
+     User.findByUsername(req.body.username).then(data=>{
+       console.log(data);
+        res.render('auth/account',{data:data});
+    }).catch(err=>{
+      console.log(err)
+      res.status(500).json(err);
+    })
+  }
 
-usersController.create = function(req, res){
+usersController.create = (req, res)=>{
+  console.log(req.body.password);
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
   User.create({
-first_name :req.body.firt,
+first_name :req.body.first,
 last_name: req.body.last,
 username: req.body.username,
-password : req.body.password,
+password : hash,
 phoneNumber  : req.body.phone
   }).then(function(user){
     req.login(user, function(err){
