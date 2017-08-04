@@ -33,8 +33,12 @@ img{
 
 .btn a{
     float:left;
-    background:#fefefe;
-    color:blue;
+    
+    
+}
+.order {
+    width:200px;
+    margin-left: 200px;
 }
 
 </style>
@@ -50,12 +54,16 @@ img{
         <h4>Qty</h4>
         <input type="number" value="1">
         <h3>Price: 9.99</h3>
-        <a href="delete" class="btn">delete</a>
+        <form action="#" method="GET">
+            <input type="submit" href="/search/check" value="delete" class="btn">
+        </form>
     </div>
     </div>
     <div>
     </div class="col-md-6">
-        <a href="/search/check" class="btn"> Checkout </a>
+        <form action="/search/check" method="GET">
+            <input type="submit" value="order"href="/search/check" class="order btn">
+        </form>
     </div>
 </div>
 <% include ../partials/footer %>
