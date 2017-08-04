@@ -1,4 +1,46 @@
 <% include ./partials/head %>
-<%= page %>
-
+<style>
+body{
+    height:100vh;
+    width:100vw;
+    
+}
+.hero{
+    height:60vh;
+}
+h1{
+    text-align:center;
+}
+.bottom{
+width:100vw:
+}
+.bottom img {
+ height:250px;
+}
+.stuff{
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+}
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <img class="hero col-md-12" src="http://i.imgur.com/HKA3ff5.jpg">
+        <h1>20% off when you spend 100+ </h1>
+    </div>
+    <div class="row bottom">
+        <div class="col-md-4 stuff"> 
+        <img class="one" src="http://i.imgur.com/tKiRQ0N.jpg" alt="">
+            <h2>Colored Pencils Sale</h2>
+        </div>
+         <div class="col-md-4 stuff">   
+            <img class="one" src="http://i.imgur.com/KMKputZ.jpg" alt="">
+            <h2>Notebooks and Pens</h2>
+        </div>
+        <div class="col-md-4 stuff">
+            <img class="one" src="http://i.imgur.com/6cDqhYC.png" alt="">
+            <h2>Essentials back to school</h2>
+        </div>
+    </div>
+</div>
 <% include ./partials/footer %>
