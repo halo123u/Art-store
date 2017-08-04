@@ -6,7 +6,6 @@ CREATE TABLE IF NOT EXISTS items(
     description TEXT,
     product_Category TEXT,
     sub_Category TEXT,
-    price DECIMAL
 );
 
 -- ADD EMAIL FOR USER
