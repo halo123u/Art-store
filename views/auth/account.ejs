@@ -1,4 +1,11 @@
 <% include ../partials/head %>
-
-<a href="/auth/logout">logout </a>
+<style>
+.body{
+    margin-top:70px;
+}
+</style>
+<div class="body">
+    <h1><%=data.username %></h1>
+    <a href="/auth/logout">logout </a>
+</div>
 <% include ../partials/footer %>
