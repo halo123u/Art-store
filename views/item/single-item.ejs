@@ -68,6 +68,10 @@
         height:200px;
         width: 200px;
     }
+    .qty{
+        width:20%;
+        margin-right:20vh;
+    }
 
 </style>
     <div class="body">
@@ -83,7 +87,8 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                 </div>
                 <h2 class="price">$9.99</h2>
-                <form action="/search/addCart/<%= data.item_id%>">
+                <form action="/search/addCart/<%= data.item_id%>" method="POST">
+                    <input type="number" class="qty" min="0" max="99" value="1" name="qty">
                     <input class="btn" type="submit" value="Add to Cart">
                 </form>
                 </div>

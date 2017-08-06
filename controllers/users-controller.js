@@ -40,7 +40,7 @@ phoneNumber  : req.body.phone
   }).then(function(user){
     req.login(user, function(err){
       if (err) return next(err);
-      res.redirect('/user');
+      res.redirect('/');
     });
   }).catch(function(err){
     console.log(err);

@@ -46,18 +46,18 @@ const ItemController = {
         Item.findComments(req.params.id).then(comments =>{
             console.log(comments);
             res.json(comments);
-        })
+        });
     },
-    addCart: (req,res)=>{
-        Item.findById(req.params.id).then(item=>{
-            console.log(item);
+    getCart: (req,res)=>{
+        Item.getOrders(req.user.user_id).then(orders=>{
+            console.log(orders);
             res.render('item/cart',{
-                data: item
-            }).catch(err=>{
-                console.log(err);
-                res.status(500).json(err);
-            })
-        })
+                data: orders
+            });
+        }).catch(err=>{
+            console.log(err);
+            res.status(500).json(err);
+        });
     }
 }
 

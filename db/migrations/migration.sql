@@ -26,7 +26,8 @@ CREATE TABLE IF NOT EXISTS comments(
     it_id INTEGER REFERENCES items(item_id)    
 );
  CREATE TABLE IF NOT EXISTS orders (
-    order_id INTEGER REFERENCES users(user_id),
+    order_id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(user_id),
     item_id INTEGER REFERENCES items(item_id),
     quantity INTEGER        
  );

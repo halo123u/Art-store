@@ -19,6 +19,16 @@ const Item = {
     },
     findComments : (id)=>{
         return db.query(`select comments.title,comments.star_rating,users.username from comments JOIN users ON comments.us_id = users.user_id WHERE us_id =$1;`,[id]);
+    },
+    addToOrders  : (order)=>{
+        return db.query(`
+        INSERT INTO orders(user_id, item_id, quantity)
+        VALUES
+        ($1,$2,$3)
+        `,[order.userId,order.itemId,order.qty]);
+    },
+    getOrders  :(userId)=>{
+        return db.query(`SELECT * FROM orders where user_id =$1`,[userId]);
     }
 }
 
