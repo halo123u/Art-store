@@ -15,13 +15,9 @@ h1{
     width:100%;
     margin: 0 auto;
 }
-.info{
-    border: 3px solid yellow;
-}
 
 .item_col-md-6 {
     width:50%;
-    background:green;
     margin-top:30px;
     display: flex;
     flex-direction:column;
@@ -44,13 +40,13 @@ img{
     width:90vw;
 }
 .item{
-    border: 10px solid purple;
     margin: 5px;
 }
 </style>
 
 <div class="body">
     <h1>Your Cart</h1>
+    <%if(items.length !== 0){ %>
     <div class=" container-fluid row">  
         <div class="item_col-md-6 col-md-6">
             <% for(item of items) { %>
@@ -60,11 +56,11 @@ img{
                     <h3><%= item.name %></h3>
                     <h4>In Stock</h4>
                     <h4>Qty</h4>
-                    <form action="#/<%=item.order_id%>" method="PUT">
-                        <input type="number" value="<%= item.quantity %>">
+                    <form action="/search/edit/cart/<%=item.order_id%>" method="POST">
+                        <input type="number" name="qty" value="<%= item.quantity %>">
                         <input type="submit" value="edit"class="btn" >
                     </form>
-                    <h3>Price: 9.99</h3>
+                    <h3>Price: $ <%=9.99* item.quantity %></h3>
                     <form action="#/<%=item.order_id%>" method="POST">
                         <input type="submit" href="/search/check" value="delete" class="btn">
                     </form>
@@ -79,5 +75,10 @@ img{
             </form>
         </div>
     </div>
+    <%} else { %>
+
+        <h2>Your Cart is Empty!</h2>
+        <%}%>
+
 </div>
 <% include ../partials/footer %>

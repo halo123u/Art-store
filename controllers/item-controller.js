@@ -70,6 +70,17 @@ const ItemController = {
             res.status(500).json(err);
 
         })
+    },
+    editOrder: (req,res)=>{
+        console.log('this is updating the cart');
+        console.log(req.params.id, req.body.qty);
+        Item.editOrder(req.params.id, req.body.qty).then(order=>{
+            console.log('updated successfully');
+            res.redirect('/search/cart/all');
+        }).catch(err=>{
+            console.log(err);
+            res.status(500).json(err);
+        })
     }
 
 }
