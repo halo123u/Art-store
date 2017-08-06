@@ -28,7 +28,11 @@ const Item = {
         `,[order.userId,order.itemId,order.qty]);
     },
     getOrders  :(userId)=>{
-        return db.query(`SELECT * FROM orders where user_id =$1`,[userId]);
+        return db.query(`
+        SELECT items.name, items.picture_url, order_id, quantity 
+        FROM orders 
+        JOIN items ON orders.item_id = items.item_id 
+        WHERE user_id =$1`,[userId]);
     }
 }
 

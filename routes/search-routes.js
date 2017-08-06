@@ -11,5 +11,7 @@ searchRoutes.get('/:category',itemController.category);
 searchRoutes.get('/sub/:subCategory',itemController.subCategory);
 searchRoutes.get('/id/:id', commentHelper.getComments, itemController.id);
 searchRoutes.get('/comments/:id',itemController.comments);
+searchRoutes.get('/cart/all', authHelpers.loginRequired, itemController.findCart);
 searchRoutes.post('/addCart/:id',authHelpers.loginRequired, cartHelpers.addToCart,itemController.getCart);
+
 module.exports= searchRoutes;

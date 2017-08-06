@@ -52,13 +52,26 @@ const ItemController = {
         Item.getOrders(req.user.user_id).then(orders=>{
             console.log(orders);
             res.render('item/cart',{
-                data: orders
+                items: orders
             });
         }).catch(err=>{
             console.log(err);
             res.status(500).json(err);
         });
+    },
+    findCart:(req, res)=>{
+        Item.getOrders(req.user.user_id).then(orders=>{
+            console.log(orders);
+            res.render('item/cart',{
+                items: orders
+            });
+        }).catch(err=>{
+            console.log(err);
+            res.status(500).json(err);
+
+        })
     }
+
 }
 
 module.exports = ItemController;
