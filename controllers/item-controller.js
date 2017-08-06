@@ -81,6 +81,14 @@ const ItemController = {
             console.log(err);
             res.status(500).json(err);
         })
+    },
+    deleteOrder: (req,res)=>{
+        Item.deleteOrder(req.params.id).then(()=>{
+            res.redirect('/search/cart/all');
+        }).catch(err=>{
+            console.log(err);
+            res.status(500).json(err);
+        })
     }
 
 }

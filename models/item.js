@@ -35,9 +35,11 @@ const Item = {
         WHERE user_id =$1`,[userId]);
     },
     editOrder  :(id,qty)=>{
-        console.log('this is the query');
         return db.query(`UPDATE orders SET quantity=$1
         WHERE order_id = $2 `,[qty,id]);
+    },
+    deleteOrder : (id)=>{
+        return db.query(`DELETE from orders WHERE order_id =$1`,[id]);
     }
 }
 
