@@ -1,4 +1,5 @@
 const Item = require('../models/item');
+const moment = require('moment');
 
 const ItemController = {
     index: (req,res)=>{
@@ -88,6 +89,12 @@ const ItemController = {
         }).catch(err=>{
             console.log(err);
             res.status(500).json(err);
+        })
+    },
+    checkout : (req,res)=>{
+        res.render('item/checkout',{
+            random : Math.floor(Math.random()*9999999),
+            date  : moment().format('MMMM Do YYYY')
         })
     }
 
