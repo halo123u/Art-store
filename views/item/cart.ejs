@@ -1,84 +1,82 @@
 <% include ../partials/head %>
-<style>
-.body{
-    margin-top: 70px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    <style>
+        .body{
+            margin-top: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-h1{
-    background-color:black;
-    color:white;
-    padding:10px;
-    width:100%;
-    margin: 0 auto;
-}
+        h1{
+            background-color:black;
+            color:white;
+            padding:10px;
+            width:100%;
+            margin: 0 auto;
+        }
 
-.item_col-md-6 {
-    width:50%;
-    margin-top:30px;
-    display: flex;
-    flex-direction:column;
-}
+        .item_col-md-6 {
+            width:50%;
+            margin-top:30px;
+            display: flex;
+            flex-direction:column;
+        }
 
-img{
-    float:left;
-    width:200px;
-    height:200px;
-    border: 3px solid black;
-    padding:20px;
-    margin-top:15px;
-}
+        img{
+            float:left;
+            width:200px;
+            height:200px;
+            border: 3px solid black;
+            padding:20px;
+            margin-top:15px;
+        }
+        .order {
+            width:200px;
+            margin-left: 200px;
+        }
+        .row{
+            width:90vw;
+        }
+        .item{
+            margin: 5px;
+        }
+    </style>
 
-.order {
-    width:200px;
-    margin-left: 200px;
-}
-.row{
-    width:90vw;
-}
-.item{
-    margin: 5px;
-}
-</style>
-
-<div class="body">
-    <h1>Your Cart</h1>
-    <%if(items.length !== 0){ %>
-    <div class=" container-fluid row">  
-        <div class="item_col-md-6 col-md-6">
-            <% for(item of items) { %>
-            <div class="item">    
-                <img src="<%=item.picture_url %>" alt="<%=item.name%>">
-                <div class="info">   
-                    <h3><%= item.name %></h3>
-                    <h4>In Stock</h4>
-                    <h4>Qty</h4>
-                    <form action="/search/edit/cart/<%=item.order_id%>" method="POST">
-                        <input type="number" name="qty" value="<%= item.quantity %>">
-                        <input type="submit" value="edit"class="btn" >
-                    </form>
-                    <h3>Price: $ <%=9.99* item.quantity %></h3>
-                    <form action="/search/remove/cart/<%=item.order_id%>?_method=DELETE" method="POST">
-                        <input type="submit" href="/search/check" value="delete" class="btn">
-                    </form>
+    <div class="body">
+        <h1>Your Cart</h1>
+        <%if(items.length !== 0){ %>
+        <div class=" container-fluid row">  
+            <div class="item_col-md-6 col-md-6">
+                <% for(item of items) { %>
+                <div class="item">    
+                    <img src="<%=item.picture_url %>" alt="<%=item.name%>">
+                    <div class="info">   
+                        <h3><%= item.name %></h3>
+                        <h4>In Stock</h4>
+                        <h4>Qty</h4>
+                        <form action="/search/edit/cart/<%=item.order_id%>" method="POST">
+                            <input type="number" name="qty" value="<%= item.quantity %>">
+                            <input type="submit" value="edit"class="btn" >
+                        </form>
+                        <h3>Price: $ <%=9.99* item.quantity %></h3>
+                        <form action="/search/remove/cart/<%=item.order_id%>?_method=DELETE" method="POST">
+                            <input type="submit" href="/search/check" value="delete" class="btn">
+                        </form>
+                    </div>
                 </div>
+                <%}%>
             </div>
-            <%}%>
-
+            <div class="col-md-6">
+                <form action="/search/checkout/cart" method="GET">
+                    <input type="submit" value="order"href="/search/check" class="order btn">
+                </form>
+            </div>
         </div>
-        <div class="col-md-6">
-            <form action="/search/checkout/cart" method="GET">
-                <input type="submit" value="order"href="/search/check" class="order btn">
-            </form>
-        </div>
-    </div>
     <%} else { %>
 
         <h2>Your Cart is Empty!</h2>
         <%}%>
 
-</div>
+    </div>
 <% include ../partials/footer %>

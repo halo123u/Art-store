@@ -1,75 +1,71 @@
 <% include ../partials/head %>
-<style>
+    <style>
+        h1{
+            font-size:30px;
+            margin-top:70px;
+            background:black;
+            padding:5px;
+            color:white;
+            width:1400px;
+            margin-left:30px;
+        }
 
-h1{
-    font-size:30px;
-    margin-top:70px;
-    background:black;
-    padding:5px;
-    color:white;
-    width:1400px;
-    margin-left:30px;
-}
+        .item-container{
+            display:flex;
+            justify-content:center;
+            flex-direction:row;
+            width:90vw;
+            flex-wrap:wrap;
+        }
 
-.item-container{
-    display:flex;
-    justify-content:center;
-    flex-direction:row;
-    width:90vw;
-    flex-wrap:wrap;
-}
+        .items {
+            padding:10px;
+            height:450px;
+            width:450px;
+            display:flex;
+            justify-content:center;
+            margin-top:20px;
+            margin-bottom:-50px;
+        }
 
-.items {
-    padding:10px;
-    height:450px;
-    width:450px;
-    display:flex;
-    justify-content:center;
-    margin-top:20px;
-    margin-bottom:-50px;
-}
+        .items img{
+            width:280px;
+            height:280px;
+            margin:0 auto;
+            border:3px solid black;
+            padding:50px;
+            display:flex;
+            flex: 1;
+        }
 
-.items img{
-    width:280px;
-    height:280px;
-    margin:0 auto;
-    border:3px solid black;
-    padding:50px;
-    display:flex;
-    flex: 1;
-}
+        h2{
+            font-size:24px;
+            font-family:avenir;
+            text-align:center;
+        }
 
-h2{
-    font-size:24px;
-    font-family:avenir;
-    text-align:center;
-}
-
-h3{
-    text-align:center;
-    margin-top:-5px;
-    font-size:16px;
-}
-
-
-
-</style>
-<div class="container-fluid body-container">
-    <h1><%= title %></h1>
-    <div class="item-container" >
-    <% for( let item of data){ %>
-    <div class="items">
-        <div class="item">
-            <a href="/search/id/<%= item.item_id%>">
-                <img src="<%=item.picture_url%>" alt="<%=item.name%>">
-            </a>
-            <a href="/search/id/<%= item.item_id%>">
-                <h2> <%= item.name  %> </h2>
-            </a>
-            <h3>price: $9.99</h3>
+        h3{
+            text-align:center;
+            margin-top:-5px;
+            font-size:16px;
+        }
+    </style>
+    <div class="container-fluid body-container">
+        <h1><%= title %></h1>
+        <div class="item-container" >
+        <% for( let item of data){ %>
+        <div class="items">
+            <div class="item">
+                <a href="/search/id/<%= item.item_id%>">
+                    <img src="<%=item.picture_url%>" alt="<%=item.name%>">
+                </a>
+                <a href="/search/id/<%= item.item_id%>">
+                    <h2> <%= item.name  %> </h2>
+                </a>
+                <h3>price: $9.99</h3>
+            </div>
         </div>
+        <%}%>
         </div>
-    <%}%>
     </div>
-<div>
 <% include ../partials/footer %>
