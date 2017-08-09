@@ -9,7 +9,7 @@ The purpose of this project is to improve dick blicks current art website. We wa
  * **[Carly Warner](https://github.com/cwarner523)**-
  Helped with the Front-End.
 
-##Wireframes
+## Wireframes
 
  **Index Page**
     Made by Dev Patel
