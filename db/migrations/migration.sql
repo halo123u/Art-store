@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS users(
     user_id SERIAL PRIMARY KEY,
     first_name TEXT,
     last_name TEXT,
-    username TEXT,
+    username TEXT UNIQUE NOT NULL,
     password TEXT,
     phoneNumber INTEGER
 );  
