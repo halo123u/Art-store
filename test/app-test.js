@@ -11,8 +11,6 @@ describe('/ GET',()=>{
         .get('/')
         .end((err,res)=>{
             res.should.have.status(200);
-            console.log(res);
-            // res.text.should;
             done();
         })
     })

@@ -6,7 +6,6 @@ function comparePass(userPassword, databasePassword) {
 }
 
 function loginRedirect(req, res, next) {
-  console.log('logged in succesfully');
   if (req.user) return res.redirect('/');
   return next();
 }
@@ -14,11 +13,9 @@ function loginRedirect(req, res, next) {
 function loginRequired(req, res, next) {
 
   if (req.user === undefined) {
-    console.log('you need to login');
+
     return res.redirect('/auth/login');
   }
-  console.log(`your logged in as ${req.user.username}`);
-  // res.redirect('/auth/login');
   return next();
 }
 

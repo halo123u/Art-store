@@ -5,7 +5,6 @@ const usersController = {};
 
 usersController.index = (req,res)=>{
     User.findByUsername(req.body.username).then(data=>{
-      console.log(data);
       res.json(data);
     }).catch(err=>{
       console.log(err)
@@ -13,10 +12,7 @@ usersController.index = (req,res)=>{
     })
 }
   usersController.account = (req,res)=>{
-    console.log('trying to access account info');
-    console.log(req.user);
      User.findByUsername(req.user.username).then(data=>{
-       console.log(data,'redericting');
         res.render('auth/account',
         {
           data:data
@@ -28,7 +24,6 @@ usersController.index = (req,res)=>{
   }
 
 usersController.create = (req, res)=>{
-  console.log(req.body.password);
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
   User.create({

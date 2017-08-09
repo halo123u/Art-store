@@ -10,12 +10,6 @@ authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
   });
 });
 
-// authRouter.get('/register', authHelpers.loginRedirect, (req, res) => {
-//   res.render('auth/register', {
-//     currentPage: 'register',
-//   });
-// });
-
 authRouter.post('/register', usersController.create);
 
 authRouter.post('/login', passport.authenticate('local', {

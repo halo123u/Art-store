@@ -7,7 +7,6 @@ const addToCart = (req,res, next)=>{
             itemId:req.params.id,
             qty:req.body.qty
         }).then(order=>{
-            console.log(order);
             next();
         }).catch(err=>{
             console.log(err);
